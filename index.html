@@ -1,118 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>💕 Love Calculator 💕</title>
 
-  <!-- ✅ SEO Meta Tags -->
-  <meta name="description" content="A fun love calculator to check name & birthday compatibility with your crush 💘">
-  <meta name="keywords" content="love calculator, crush compatibility, couple match, valentine, relationship test">
-  <meta name="author" content="Tanisha Chouhan">
-  <meta name="robots" content="index, follow">
-
-  <!-- ✅ Page Title -->
-  <title>💘 Love Match Calculator 💘</title>
-
-  <!-- ✅ Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
-
-  <!-- ✅ Optional: Favicon (you can replace this link with your own icon) -->
-  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" type="image/png">
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" />
 
   <style>
     body {
-      font-family: 'Mochiy Pop One', cursive;
-      background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+      font-family: 'Quicksand', sans-serif;
+      background: linear-gradient(to right, #ffe6f0, #ffe4ec);
+      margin: 0;
+      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
+      min-height: 100vh;
     }
 
     h1 {
-      color: #d63384;
-      font-size: 3em;
-      margin-bottom: 20px;
+      font-family: 'Pacifico', cursive;
+      color: #ff69b4;
+      font-size: 2.2em;
+      margin: 20px 10px;
+      text-align: center;
     }
 
     .container {
       background: white;
-      padding: 30px;
       border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      max-width: 400px;
+      padding: 25px;
+      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
       width: 90%;
+      max-width: 400px;
     }
 
     input, select {
-      width: 80%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 2px solid #ff69b4;
-      border-radius: 10px;
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 2px solid #ffc0cb;
+      border-radius: 15px;
       font-size: 1em;
+      outline: none;
+      background: #fff0f5;
     }
 
     button {
       background-color: #ff69b4;
       color: white;
-      padding: 12px 20px;
+      padding: 12px;
+      margin: 10px 5px;
       border: none;
-      border-radius: 12px;
+      border-radius: 15px;
       font-size: 1em;
       cursor: pointer;
-      transition: background 0.3s;
+      width: 30%;
     }
 
     button:hover {
-      background-color: #e754a4;
+      background-color: #ff1493;
+    }
+
+    h3 {
+      color: #ff6f91;
+      margin: 15px 0 5px;
+      font-size: 1.1em;
     }
 
     #result {
       margin-top: 20px;
-      font-size: 1.5em;
+      font-size: 1.4em;
       color: #ff1493;
-      animation: fadeIn 1s ease-in;
+      text-align: center;
+      animation: fadeIn 0.8s ease-in;
+    }
+
+    .heart {
+      display: inline-block;
+      animation: pulse 1.2s infinite;
     }
 
     @keyframes fadeIn {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
     }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.8em;
+      }
+
+      button {
+        width: 100%;
+        margin: 8px 0;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>💘 Love Calculator 💘</h1>
+  <h1>💕 Love Calculator 💕</h1>
   <div class="container">
-    <input type="text" id="name1" placeholder="Your Name">
+    <h3>Your Info</h3>
+    <input type="text" id="name1" placeholder="Your Name 💁‍♀️" />
     <select id="gender1">
-      <option value="">Your Gender</option>
+      <option value="">Select Gender</option>
       <option value="female">Female</option>
       <option value="male">Male</option>
       <option value="other">Other</option>
     </select>
-    <input type="date" id="dob1"><br>
+    <input type="date" id="dob1" />
 
-    <input type="text" id="name2" placeholder="Crush's Name">
+    <h3>Crush's Info</h3>
+    <input type="text" id="name2" placeholder="Crush's Name 💖" />
     <select id="gender2">
-      <option value="">Crush's Gender</option>
+      <option value="">Select Gender</option>
       <option value="female">Female</option>
       <option value="male">Male</option>
       <option value="other">Other</option>
     </select>
-    <input type="date" id="dob2"><br>
+    <input type="date" id="dob2" />
 
-    <button onclick="calculateLove()">Calculate ❤️</button>
+    <div>
+      <button onclick="calculateLove()">💘 Go!</button>
+      <button onclick="location.reload()">🔄 Reset</button>
+      <button onclick="shareResult()">📤 Share</button>
+    </div>
+
     <div id="result"></div>
   </div>
-
-  <!-- ✅ Optional: Background Music (put your own file if needed) -->
-  <!-- <audio autoplay loop hidden>
-    <source src="your-music.mp3" type="audio/mpeg">
-  </audio> -->
 
   <script>
     function calculateLove() {
@@ -124,12 +149,11 @@
       const dob2 = document.getElementById("dob2").value;
 
       if (!name1 || !dob1 || !name2 || !dob2 || !gender1 || !gender2) {
-        document.getElementById("result").innerHTML = "Please fill in all fields 💔";
+        document.getElementById("result").innerHTML = "💔 Please fill in all fields!";
         return;
       }
 
       const combined = name1 + gender1 + dob1 + name2 + gender2 + dob2;
-
       let hash = 0;
       for (let i = 0; i < combined.length; i++) {
         hash = combined.charCodeAt(i) + ((hash << 5) - hash);
@@ -137,14 +161,26 @@
       const lovePercent = Math.abs(hash % 101);
 
       let message = "";
-      if (lovePercent > 80) message = "❤️ Soulmates! ❤️";
-      else if (lovePercent > 60) message = "💞 Great Match 💞";
-      else if (lovePercent > 40) message = "💘 Some Spark 💘";
-      else if (lovePercent > 20) message = "🤔 Needs Work 🤔";
-      else message = "💔 Not meant to be 💔";
+      if (lovePercent > 80) message = "💖 Meant to be! 💖";
+      else if (lovePercent > 60) message = "💞 Lovely Match 💞";
+      else if (lovePercent > 40) message = "💘 Cute Couple 💘";
+      else if (lovePercent > 20) message = "🤔 Needs Spark 🤔";
+      else message = "💔 Maybe not now 💔";
 
-      document.getElementById("result").innerHTML = 
-        `${name1} & ${name2} are ${lovePercent}% compatible!<br><strong>${message}</strong>`;
+      document.getElementById("result").innerHTML =
+        `<div class="heart">❤️</div><br>${name1} & ${name2} are <strong>${lovePercent}%</strong> compatible!<br><em>${message}</em>`;
+    }
+
+    function shareResult() {
+      if (navigator.share) {
+        navigator.share({
+          title: "💕 Love Calculator",
+          text: "Check your compatibility now!",
+          url: location.href
+        });
+      } else {
+        alert("📋 Sharing not supported. You can copy the link manually!");
+      }
     }
   </script>
 </body>

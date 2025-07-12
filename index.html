@@ -10,7 +10,6 @@
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" />
 
   <style>
-    <style>
   body {
     font-family: 'Mochiy Pop One', cursive;
     background: linear-gradient(to right, #ffb6c1, #ffe4e1);
@@ -114,8 +113,6 @@
       max-width: 480px;
     }
   }
-</style>
-
   </style>
 </head>
 <body>
@@ -129,7 +126,7 @@
       <option value="male">Male</option>
       <option value="other">Other</option>
     </select>
-    <input type="date" id="dob1" />
+    <input type="text" id="dob1" placeholder="Your Birth Date (YYYY-MM-DD)" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" />
 
     <h3>Crush's Info</h3>
     <input type="text" id="name2" placeholder="Crush's Name 💖" />
@@ -139,7 +136,7 @@
       <option value="male">Male</option>
       <option value="other">Other</option>
     </select>
-    <input type="date" id="dob2" />
+    <input type="text" id="dob2" placeholder="Crush's Birth Date (YYYY-MM-DD)" onfocus="(this.type='date')" onblur="if(this.value==''){this.type='text'}" />
 
     <div>
       <button onclick="calculateLove()">💘 Go!</button>
@@ -196,3 +193,4 @@
   </script>
 </body>
 </html>
+

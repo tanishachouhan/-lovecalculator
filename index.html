@@ -10,101 +10,112 @@
   <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" />
 
   <style>
-    body {
-      font-family: 'Quicksand', sans-serif;
-      background: linear-gradient(to right, #ffe6f0, #ffe4ec);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-    }
+    <style>
+  body {
+    font-family: 'Mochiy Pop One', cursive;
+    background: linear-gradient(to right, #ffb6c1, #ffe4e1);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
 
+  .container {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    margin: 20px;
+  }
+
+  h1 {
+    color: #d63384;
+    font-size: 2.8em;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #ff69b4;
+    border-radius: 10px;
+    font-size: 1em;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 100%;
+    background-color: #ff69b4;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+  }
+
+  button:hover {
+    background-color: #e754a4;
+  }
+
+  #result {
+    margin-top: 20px;
+    font-size: 1.5em;
+    color: #ff1493;
+    animation: fadeIn 1s ease-in;
+    word-wrap: break-word;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.95);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
     h1 {
-      font-family: 'Pacifico', cursive;
-      color: #ff69b4;
-      font-size: 2.2em;
-      margin: 20px 10px;
-      text-align: center;
+      font-size: 2em;
     }
 
     .container {
-      background: white;
-      border-radius: 20px;
-      padding: 25px;
-      box-shadow: 0 10px 30px rgba(255, 105, 180, 0.2);
-      width: 90%;
-      max-width: 400px;
+      padding: 20px;
     }
 
-    input, select {
-      width: 100%;
-      padding: 12px;
-      margin: 8px 0;
-      border: 2px solid #ffc0cb;
-      border-radius: 15px;
+    input, select, button {
       font-size: 1em;
-      outline: none;
-      background: #fff0f5;
-    }
-
-    button {
-      background-color: #ff69b4;
-      color: white;
-      padding: 12px;
-      margin: 10px 5px;
-      border: none;
-      border-radius: 15px;
-      font-size: 1em;
-      cursor: pointer;
-      width: 30%;
-    }
-
-    button:hover {
-      background-color: #ff1493;
-    }
-
-    h3 {
-      color: #ff6f91;
-      margin: 15px 0 5px;
-      font-size: 1.1em;
     }
 
     #result {
-      margin-top: 20px;
-      font-size: 1.4em;
-      color: #ff1493;
-      text-align: center;
-      animation: fadeIn 0.8s ease-in;
+      font-size: 1.2em;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: 3em;
     }
 
-    .heart {
-      display: inline-block;
-      animation: pulse 1.2s infinite;
+    .container {
+      max-width: 480px;
     }
+  }
+</style>
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-
-    @keyframes pulse {
-      0% { transform: scale(1); }
-      50% { transform: scale(1.2); }
-      100% { transform: scale(1); }
-    }
-
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.8em;
-      }
-
-      button {
-        width: 100%;
-        margin: 8px 0;
-      }
-    }
   </style>
 </head>
 <body>
